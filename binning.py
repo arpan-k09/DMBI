@@ -6,26 +6,39 @@ def make_bin(li):
     bin_size = int(input("Enter bin size : - "))
     rem = leng % bin_size
 
-    while(count < leng - rem):
+        if rem != 0:
+        while(count < leng - rem):
+            temp_li = []
+            temp = 0
+            while temp != bin_size:
+                if li[temp + count] is None:
+                    break
+                else:
+                    temp_li = temp_li + [li[temp + count]]
+                temp = temp + 1
+            final_bin.append(temp_li)
+            count = count + bin_size
+
+        count1 = 0
         temp_li = []
-        temp = 0
-        while temp != bin_size:
-            if li[temp + count] is None:
-                break
-            else:
-                temp_li = temp_li + [li[temp + count]]
-            temp = temp + 1
-        final_bin.append(temp_li)
-        count = count + bin_size
 
-    count1 = 0
-    temp_li = []
+        while count1 != rem:
+            temp_li = temp_li + [li[count]]
 
-    while count1 != rem:
-        temp_li = temp_li + [li[count]]
-
-        count = count + 1
-        count1 = count1 + 1
+            count = count + 1
+            count1 = count1 + 1
+    else:
+        while (count != leng):
+            temp_li = []
+            temp = 0
+            while temp != bin_size:
+                if li[temp + count] is None:
+                    break
+                else:
+                    temp_li = temp_li + [li[temp + count]]
+                temp = temp + 1
+            final_bin.append(temp_li)
+            count = count + bin_size
     final_bin.append(temp_li)
 
     return final_bin
