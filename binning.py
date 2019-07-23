@@ -6,7 +6,7 @@ def make_bin(li):
     bin_size = int(input("Enter bin size : - "))
     rem = leng % bin_size
 
-        if rem != 0:
+    if rem != 0:
         while(count < leng - rem):
             temp_li = []
             temp = 0
