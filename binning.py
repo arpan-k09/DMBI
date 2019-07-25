@@ -11,10 +11,7 @@ def make_bin(li):
             temp_li = []
             temp = 0
             while temp != bin_size:
-                if li[temp + count] is None:
-                    break
-                else:
-                    temp_li = temp_li + [li[temp + count]]
+                temp_li = temp_li + [li[temp + count]]
                 temp = temp + 1
             final_bin.append(temp_li)
             count = count + bin_size
@@ -111,7 +108,7 @@ def range_bi(bi):
 
 li = [13, 15, 16, 16, 19, 20, 20, 21, 22, 22, 25, 25, 25, 25, 30, 33, 33, 35, 5, 35, 35, 36, 40, 45, 46, 52, 70 ]
 bi = make_bin(li)
-mean_bi(bi)
-median_bi(bi)
-range_bi(bi)
+print(mean_bi(bi))
+print(median_bi(bi))
+print(range_bi(bi))
 
